@@ -3,7 +3,7 @@ import "../css/index.css";
 
 const Month = (props) => {
 
-    console.log("props month : " + props.monthSelected.month);
+    //console.log("props month : " + props.monthSelected.month);
 
     return (
         <div className="month-select-container">

@@ -13,14 +13,13 @@ const App = () => {
     const month = date.getMonth();
     const options = { month: 'long'};
     const monthString = date.toLocaleDateString('en-US', options);
-    //console.log('month: ' + month);
 
     const [monthSelected, setMonthSelected] = useState( {
         index: month,
         text: monthString
     });
 
-    console.log("monthSelected: " + JSON.stringify(monthSelected));
+    //console.log("monthSelected: " + JSON.stringify(monthSelected));
 
     function handleMonthChange(e) {
         //console.log(e.target.selectedOptions[0].text);

@@ -1,0 +1,48 @@
+.input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #bec1c5;
+    margin-bottom: 20px;   
+}
+
+.input-hdr { 
+    border-bottom: 0px solid;
+    margin: 0;
+}
+
+
+.mg-btm-20 {
+    margin-bottom: 20px;
+}
+
+/* .input-col-one {
+    display: flex;
+    flex-direction: column;
+} */
+  
+.input-col-two{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40%;
+}
+   
+.input-box-med {
+    border-radius: 5px;
+    border: 1px solid #919396;
+}
+  
+.input-box-small {
+    border-radius: 5px;
+    border: 1px solid #919396;
+    max-width: 100px;
+}
+  
+.align-right {
+    text-align: right;
+}
+
+.planned-amt-hdr {
+    text-align: right;
+}

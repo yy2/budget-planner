@@ -1,19 +1,20 @@
 import React, {useState} from 'react';
-import Input from './Input';
+import Card from './Card';
 import "../css/index.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Income = (props) => {
 
     const [totalIncome, setTotalIncome] = useState(0);   
     const [remainingAmt, setRemainingAmt] = useState(totalIncome);
+    const cardName = `Income for ${props.monthSelected.text} with Index: ${props.monthSelected.index}`;
+    const inputName="PayCheck1";
     
     return (
-        <div className="income-container">
-            <p>Income for {props.monthSelected.text} Index: {props.monthSelected.index}</p>
-            <Input 
-                inputName="Paycheck1"
-                plannedAmt={totalIncome}
-                remainingAmt={remainingAmt}
+        <div>
+            <Card 
+                cardName={cardName}
+                inputName={inputName}
             />
         </div>
     );
