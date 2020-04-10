@@ -1,11 +1,9 @@
 import React, {useState, useEffect } from 'react';
 import Month from './Month';
 import Income from './Income';
-import "../css/index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { Button } from 'react-bootstrap';
-
+import "../css/index.css";
 
 const App = () => {
 
@@ -29,6 +27,8 @@ const App = () => {
             text: e.target.selectedOptions[0].text});
     }
 
+    const [totalBalance, setTotalBalance] = useState(0);
+
     // useEffect(() => {
     //     console.log("render");
     // }, [monthSelected]);
@@ -38,9 +38,12 @@ const App = () => {
                 <h2 className="header">Budget Planner</h2>
                 <Month 
                     handleMonthChange={handleMonthChange}
-                    monthSelected={monthSelected} />
+                    monthSelected={monthSelected} 
+                />
+                <p>Your remaining balance for this month is <strong>${totalBalance.toFixed(2)}</strong></p>
                 <Income 
-                    monthSelected={monthSelected} />
+                    monthSelected={monthSelected} 
+                />
                 
             </div>
     );

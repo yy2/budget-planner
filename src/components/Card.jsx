@@ -1,38 +1,68 @@
 import React, {useState} from 'react';
 import Input, { InputHeaders } from './Input';
-import "../css/index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
+import "../css/index.css";
 
 const Card = (props) => {
 
-    const [itemName, setInputName] = useState(props.inputName);
+    const [itemName, setItemName] = useState("");
     const [plannedAmt, setPlannedAmt] = useState(0); 
-    const [remainingAmt, setRemainingAmt] = useState(0);
+    // const [remainingAmt, setRemainingAmt] = useState(0);
 
-    //array of items 
-    const items = [{
+    const [items, setItems] = useState([{
+        // key: 0,
         itemName: itemName,
         plannedAmt: plannedAmt,
-        remainingAmt: remainingAmt
-    }];
+        remainingAmt: 0
+    }]);
+
+    function itemNameChange(e, i) {
+        //const prevItem = items[e.target.id].;
+        // console.log("index: " + e.target.id);
+        // console.log("value: " + (e.target.value));
+        items[i].itemName = e.target.value;
+    }
+
+    function plannedAmtChange(e, i) {
+        // console.log("index: " + e.target.id);
+        items[i].plannedAmt = e.target.value;
+    }
+   
+    function addNewItem() {
+        const item = {
+            // key: index,
+            itemName: "",
+            plannedAmt: 0,
+            remainingAmt: 0
+        };
+        setItems(prevItems => {
+            return [...prevItems, item];
+        });
+    }
 
     console.log(items);
-    function handleAddNewItem(e) {
-        console.log("button clicked");
-    }
-    
+
     return (
         <div className="card-container">
             <InputHeaders 
                 cardName={props.cardName}
             />
-            <Input
-                inputName={itemName}
-                plannedAmt={plannedAmt}
-                remainingAmt={remainingAmt}
-            />
-            <Button variant="outline-info" onClick={handleAddNewItem}>Add Item</Button>
+            {items.map((items, i) => {
+                return (
+                <Input
+                    key={i}
+                    index={i}
+                    itemName={items.itemName}
+                    plannedAmt={items.plannedAmt}
+                    remainingAmt={items.remainingAmt}
+                    itemNameChange={itemNameChange}
+                    plannedAmtChange={plannedAmtChange}
+                />
+                );
+            }
+            )}
+            <Button variant="outline-info" className="add-item-btn" onClick={addNewItem}>Add Item</Button>
         </div>
     );
 }

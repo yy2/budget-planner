@@ -1,3 +1,5 @@
+
+
 * {
   box-sizing: border-box;
 }
@@ -7,25 +9,36 @@
 }
 
 .header {
-  margin: 30px 0;
+  margin: 20px 0;
+  color:  #547391;
 }
 
 .month-select {
+  background-color: rgb(255, 255, 255);
   padding: 5px 20px;
   border-radius: 5px;
-  border: 1px solid #2b3f61;
+  border: 1px solid #97b4cf;
   outline: none;
+  margin-bottom: 10px;
 }
 
 .month-select:hover {
-  border: 1px solid red;
+  outline: none;
+  border: 1px solid rgb(158, 109, 109);
 }
 
 .card-container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
   border-radius: 5px;
   border: 1px solid #919396;
-  box-shadow: 0 2px 10px rgba(0,0,0,.3);
+  box-shadow: 0 2px 10px rgba(21, 118, 156, 0.3);
   margin: 20px 0;
-  width: 70%;
+  width: 60%;
   padding: 20px;
+}
+
+.add-item-btn {
+  width: 100px;
 }

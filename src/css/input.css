@@ -15,11 +15,6 @@
 .mg-btm-20 {
     margin-bottom: 20px;
 }
-
-/* .input-col-one {
-    display: flex;
-    flex-direction: column;
-} */
   
 .input-col-two{
     display: flex;
@@ -29,20 +24,32 @@
 }
    
 .input-box-med {
+    border: 0;
+}
+
+.input-box-med:focus {
+    outline: none;
     border-radius: 5px;
-    border: 1px solid #919396;
+    border: 2px solid #a2ccd3;
 }
   
 .input-box-small {
+    border: 0;
+    max-width: 60px;
+}
+
+.input-box-small:focus {
+    outline: none;
     border-radius: 5px;
-    border: 1px solid #919396;
-    max-width: 100px;
+    border: 2px solid #a2ccd3;
+    max-width: 60px;
 }
   
 .align-right {
     text-align: right;
 }
 
-.planned-amt-hdr {
+.planned-amt-header {
+    width: 50px;
     text-align: right;
 }
