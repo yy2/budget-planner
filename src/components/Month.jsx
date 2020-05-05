@@ -16,6 +16,10 @@ const Month = (props) => {
                 <option value="5">June</option>
                 <option value="6">July</option>
                 <option value="7">August</option>
+                <option value="8">September</option>
+                <option value="9">October</option>
+                <option value="10">November</option>
+                <option value="11">December</option>
             </select>
         </div>
     );
