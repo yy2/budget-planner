@@ -9,7 +9,9 @@ const Card = (props) => {
     const [itemName, setItemName] = useState("");
     const [plannedAmt, setPlannedAmt] = useState(0); 
     // const [remainingAmt, setRemainingAmt] = useState(0);
-
+    if(props.isIncome) {
+        console.log("is an income card");
+    }
     const [items, setItems] = useState([{
         // key: 0,
         itemName: itemName,
