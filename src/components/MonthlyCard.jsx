@@ -18,6 +18,11 @@ const MonthlyCard = (props) => {
         console.log("totalBalance: " + totalBalance);
     }
 
+    function subtractFromBalance(income) {
+        setTotalBalance(totalBalance-income);
+        console.log("totalBalance: " + totalBalance);
+    }
+
     function addNewCard(e) {
         //e.preventDefault();
         const prevCards = cards;
@@ -42,6 +47,7 @@ const MonthlyCard = (props) => {
             <Card 
             cardName={`Income for ${props.monthSelected.text}`}
             addToBalance={addToBalance}
+            isExpense={false}
             />
             {cards.map((card, index) => {
             return (
@@ -49,7 +55,8 @@ const MonthlyCard = (props) => {
                 key={index}
                 cardName={cards[index].cardName}
                 totalIncome={totalBalance}
-                addToBalance={addToBalance}
+                subtractFromBalance={subtractFromBalance}
+                isExpense={true}
                 />
                 );
             })}  

@@ -31,7 +31,12 @@ const Card = (props) => {
         items[i].plannedAmt = Number(e.target.value);
         setPlannedAmt(items[i].plannedAmt);
         //console.log("plannedAmt: " + items[i].plannedAmt);
-        props.addToBalance(items[i].plannedAmt);
+        if(props.isExpense) {
+            props.subtractFromBalance(items[i].plannedAmt);
+        }
+        else {
+            props.addToBalance(items[i].plannedAmt);
+        }
         //console.log("total: " + props.totalIncome);
     }
    
